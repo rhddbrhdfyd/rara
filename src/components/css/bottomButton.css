@@ -1,0 +1,20 @@
+#aside {
+  position: fixed;
+  bottom: 50px;
+  width: fit-content;
+  z-index: 300;
+  left: 25px;
+}
+
+#aside .aside-box {
+  display: flex;
+  flex-direction: column;
+}
+
+#aside .aside-box a {}
+
+#aside .aside-box a button {}
+
+#aside .aside-box a button img {}
+
+#aside .a-icon {}

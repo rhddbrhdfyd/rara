@@ -1,0 +1,74 @@
+#codylist {}
+
+#codylist .wrap {
+  margin-top: 150px;
+}
+
+#codylist .cody-layout {
+  display: flex;
+}
+
+#codylist .cody-left {
+
+}
+
+#codylist .cody-list {
+  display: flex;
+}
+
+#codylist .s-card {
+  margin-right: 20px;
+  position: relative;
+  width: 342px;
+  height: 539px;
+}
+
+#codylist .s-image {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+#codylist .cody-desc {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  white-space: pre-line; /* \n 줄바꿈 적용 */
+  font-size: 20px;
+  line-height: 1.6;
+  color: white;
+}
+
+#codylist .cody-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#codylist .a-title {
+  width: 342px;
+  height: 114px;
+  background-color: #CCC;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#codylist .a-lists {
+  padding-left: 0;
+}
+
+#codylist .a-list {
+  width: 342px;
+  height: 84px;
+  background-color: #CCC;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14px;
+}
