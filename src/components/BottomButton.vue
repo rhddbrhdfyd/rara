@@ -1,10 +1,16 @@
 <script setup>
 import './css/bottomButton.css'
+import ChatIcon from '@/assets/icons/chat.svg';
 </script>
 
 <template>
   <aside id="aside">
     <div class="aside-box">
+        <router-link to="/event">
+        <button>
+          <img src="https://placehold.co/30x30?text=event" alt="event" class="a-icon" />
+        </button>
+      </router-link>
       <router-link to="/sunny">
         <button>
           <img src="https://placehold.co/30x30?text=sunny" alt="sunny" class="a-icon" />
@@ -30,9 +36,9 @@ import './css/bottomButton.css'
           <img src="https://placehold.co/30x30?text=heart" alt="heart" class="a-icon" />
         </button>
       </router-link>
-       <router-link to="/chat">
+      <router-link to="/chat">
         <button>
-          <img src="https://placehold.co/30x30?text=chat" alt="chat" class="a-icon" />
+          <ChatIcon class="a-icon" />
         </button>
       </router-link>
     </div>

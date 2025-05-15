@@ -16,13 +16,14 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router'; // ✅ 추가
 
 const isVisible = ref(true);
 const dontShow = ref(false);
+const router = useRouter(); // ✅ 라우터 인스턴스 가져오기
 
 function handleClose() {
   if (dontShow.value) {
-    // 오늘 날짜를 YYYY-MM-DD 형식으로 저장
     const today = new Date().toISOString().slice(0, 10);
     localStorage.setItem('scratchClosedDate', today);
   }
@@ -30,12 +31,10 @@ function handleClose() {
 }
 
 function handleMore() {
-  // '더보기' 클릭 시 실제 동작 (예: 라우터 이동)
-  console.log('더보기 클릭!');
+  router.push('/event'); // ✅ 이벤트 페이지로 이동
 }
 
 onMounted(() => {
-  // 로컬스토리지에 저장된 날짜와 오늘 날짜 비교
   const savedDate = localStorage.getItem('scratchClosedDate');
   const today = new Date().toISOString().slice(0, 10);
   if (savedDate === today) {
@@ -44,11 +43,12 @@ onMounted(() => {
 });
 </script>
 
+
 <style scoped>
 .scratch-container {
   position: absolute;
   width: 400px;
-  height: auto;
+  height: 200px;
   background: #FFF9CE;
   display: flex;
   flex-direction: column;
@@ -56,21 +56,22 @@ onMounted(() => {
   right: 3%;
   z-index: 2;
   bottom: 7%;
-  padding: 20px 65px 20px 65px;
+  justify-content: center;
+  align-items: center;
 }
 
 .scratch-container h2 {
   font-size: 15px;
   font-weight: 800;
   color: #464e55;
-  margin: 0;
+  margin-top: 20px;
 }
 
 .scratch-container p {
   font-size: 13px;
   font-weight: 800;
   color: #5d6871;
-  margin: 8px 0 16px;
+  margin: 4px 0 17px;
 }
 
 .scratch-box.more-btn {
@@ -78,8 +79,8 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 300px;
-  height: 87px;
+  width: 335px;
+  height: 73px;
   background-color: #b6d4ec;
   border-radius: 7px;
   font-size: 14px;
@@ -88,6 +89,7 @@ onMounted(() => {
   cursor: pointer;
   text-decoration: none;
   margin-bottom: 12px;
+  
 }
 
 .dont-show {
@@ -96,6 +98,8 @@ onMounted(() => {
   font-size: 12px;
   color: #464e55;
   user-select: none;
+  margin-bottom: 10px;
+  transform: translateX(-74%);
 }
 
 .dont-show input {
@@ -116,11 +120,12 @@ onMounted(() => {
   position: absolute;
   top: 10px;
   right: 10px;
+  box-shadow: 1px 1px 2px #ccc;
 }
 
 .close-btn .icon {
   color: #55565b;
   font-weight: 700;
-  font-size: 26px;
+  font-size: 22px;
 }
 </style>

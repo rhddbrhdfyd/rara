@@ -36,6 +36,12 @@ function handleClose() {
       <div class="title-img">
         <img src="https://placehold.co/1920x900?text=title" alt="홈 타이틀 이미지" />
       </div>
+      <div class="title-text">
+        <h2>오늘의 날씨를<br>
+        골라보세요!</h2>
+        <p>날씨에 맞는 옷과 활동을<br>
+        추천해드려요</p>
+    </div>
     </div>
   </div>
   <Weather />

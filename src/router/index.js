@@ -10,7 +10,8 @@ const routes = [
   {
   path: '/:weatherType(rainy|sunny|cloudy|snowy)',
   component: CodyList,
-},
+  },
+
   {
     path: '/event',
     component: Event,

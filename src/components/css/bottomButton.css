@@ -17,4 +17,9 @@
 
 #aside .aside-box a button img {}
 
-#aside .a-icon {}
+.a-icon {
+    width: 30px;
+  height: 30px;
+  fill: #000; /* SVG 내부 색 바꾸기 */
+  display: block
+}

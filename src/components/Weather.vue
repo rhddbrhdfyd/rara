@@ -6,7 +6,13 @@ import Sidebar from './Sidebar.vue'
 const router = useRouter();
 
 const tiles = [
-  { type: 'sunny', image: 'https://placehold.co/340x340?text=sunny', clickable: true },
+  { 
+    type: 'sunny',
+    image: '/assets/sunny.svg', 
+    title: '맑음',
+    description: '햇살 좋은 날이에요 ☀️',
+    clickable: true
+    },
   { type: 'cloudy', image: 'https://placehold.co/340x340?text=cloudy', clickable: true },
   { type: 'rainy', image: 'https://placehold.co/340x340?text=rainy', clickable: true },
   { type: 'snowy', image: 'https://placehold.co/340x340?text=snowy', clickable: true },
@@ -52,8 +58,11 @@ const calendarMarks = ref([
           class="tile"
           @click="goToWeather(tile.type)"
         >
-          <img :src="tile.image" :alt="tile.label" class="tile-img" />
-          <p class="tile-label">{{ tile.label }}</p>
+          <img :src="tile.image" :alt="tile.title" class="tile-img" />
+          <div class="tile-content">
+            <h2 class="tile-title">{{ tile.title }}</h2>
+            <p class="tile-desc">{{ tile.description }}</p>
+          </div>
         </div>
         <div class="calendar">
         <Calendar
@@ -74,4 +83,5 @@ const calendarMarks = ref([
   margin: 0 auto;
   padding: 2rem 1rem;
 }
+
 </style>
